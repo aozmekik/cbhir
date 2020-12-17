@@ -8,6 +8,8 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 import scipy.spatial
 
+# TODO. valid & test split
+# TODO. show how many labels match in inference.
 # TODO. calculate all the prediction values.
 
 
@@ -16,20 +18,27 @@ def read_hsi(file):
 
 
 def get_hsi(dir='dataset/AnkaraHSIArchive'):
-    X, Y, names = [], [], []
+    X, Y, names, clss = [], [], [], []
 
-    dfs = pd.read_excel('dataset/AnkaraHSIArchive/Labels.xlsx',
-                        sheet_name='Land-Use Categories')
+    land_use_categories = pd.read_excel('dataset/AnkaraHSIArchive/Labels.xlsx',
+                                        sheet_name='Land-Use Categories')
+    land_cover_classes = pd.read_excel('dataset/AnkaraHSIArchive/Labels.xlsx',
+                                       sheet_name='Land-Cover Classes')
 
     for file in os.listdir(dir):
         if file.endswith('.mat'):
             name = os.path.join(dir, file)
-            X.append(read_hsi(name))
             i = int(file.split('_')[0]) - 1
-            # print(file, i, dfs.iat[i, 0], dfs.iat[i, 1]) # FIXME. double check.
-            Y.append(dfs.iat[i, 1] - 1)
+            # FIXME. double check.
+            # print(file, i, land_use_categories.iat[i, 0],
+            #       land_use_categories.iat[i, 1], land_use_categories.iat[i, 1] - 1)
+            # print(land_cover_classes.iloc[i])
+            X.append(read_hsi(name))
+            Y.append(land_use_categories.iat[i, 1] - 1)
             names.append(name)
-    return np.array(X), np.array(Y), names
+            clss.append([int(row_name == 'x')
+                         for _, row_name in land_cover_classes.iloc[i].iteritems()][1:])
+    return np.array(X), np.array(Y), names, clss
 
 
 def split_hsi(X, Y, ratio=.1):
@@ -83,34 +92,68 @@ def train_model(model, X_train, Y_train, X_test, Y_test):
 
 
 def k_closest(db, query, k=6):
-    db = [i[0] for i in sorted(enumerate(list(db)), key = lambda p: np.linalg.norm(p[1]-query))]
+    db = [i[0] for i in sorted(
+        enumerate(list(db)), key=lambda p: np.linalg.norm(p[1]-query))]
     return db[:k]
 
-def cbir(query):
-    # TODO. test on closest
-    db_img, _, db_tag = get_hsi()
+
+def score(db_clss, result):
+    R = len(result) - 1
+    Lq = db_clss[result[0]]  # category labels associated with query image
+    # category labels associated with retrieved images
+    LXR = [db_clss[i] for i in result[1:]]
+    LX = 4  # set of category labels associated to archive ? FIXME.
+
+    AC, PR, RC, HL = 0, 0, 0, 0
+    for LXr in LXR:
+        intersect = len(
+            [1 for index, label in enumerate(LXr) if label == 1 and Lq[index] == 1])
+        union = len(
+            [1 for index, label in enumerate(LXr) if label == 1 or Lq[index] == 1])
+        AC += intersect / union
+        PR += intersect / len([1 for l in LXr if l == 1])
+        RC += intersect / len([1 for l in Lq if l == 1])
+        HL += len([1 for index, label in enumerate(LXr) if (label ==
+                                                            1 and Lq[index] == 0) or (label == 0 and Lq[index] == 1)])
+    return AC/R, PR/R, RC/R, HL/R
+
+
+def cbir(query=None):
+    db_img, _, db_names, db_clss = get_hsi()
     model = models.load_model('hsi_model')
     # model.summary()
     features = models.Model(
         inputs=model.input, outputs=model.layers[-2].output)
-
     db_feature = features.predict(db_img)
-    query_feature = db_feature[db_tag.index(query)]
-    closest = k_closest(db_feature, query_feature)
-    print('Retrieved images: ')
-    for i in closest:
-        print(db_tag[i][:-3] + 'bmp')
+
+    if query:
+        queries = [query]
+    else:
+        queries = db_names
+
+    AC, PR, RC, HL = 0, 0, 0, 0
+    for i, q in enumerate(queries):
+        print('{}/{}'.format(i, len(queries)))
+        query_feature = db_feature[db_names.index(q)]
+        closest = k_closest(db_feature, query_feature)
+        if query:
+            print('Retrieved images: ')
+            for i in closest:
+                print('\t>' + db_names[i][:-3] + 'bmp')
+        ac, pr, rc, hl = score(db_clss, closest)
+        AC += ac
+        PR += pr
+        RC += rc
+        HL += hl
+    N = len(queries)
+    AC, PR, RC, HL = AC/(N), PR/N, RC/N, HL/N
+    print('AC (%): {:.2f}'.format(AC))
+    print('PR (%): {:.2f}'.format(PR))
+    print('RC (%): {:.2f}'.format(RC))
+    print('HL    : {:.2f}'.format(HL))
 
 
-
-# print(dfs)
-# X_train, X_test, Y_train, Y_test = get_hsi()
-# print(Y_train)
-# # show_img(X_train, Y_train)
-# model = create_model()
-# train_model(model, X_train, Y_train, X_test, Y_test)
-# # print(data)
-# cbir('dataset/AnkaraHSIArchive/099_EO1H1770322015230110KF_Radiance_25x3.mat')
+cbir()
 
 
 # img = scipy.io.loadmat(
