@@ -9,13 +9,11 @@ import matplotlib.pyplot as plt
 import scipy.spatial
 
 # TODO. valid & test split
-# TODO. show how many labels match in inference.
 # TODO. calculate all the prediction values.
 
 
 def read_hsi(file):
     return scipy.io.loadmat(file)['patch']
-
 
 def get_hsi(dir='dataset/AnkaraHSIArchive'):
     X, Y, names, clss = [], [], [], []
@@ -98,62 +96,73 @@ def k_closest(db, query, k=6):
 
 
 def score(db_clss, result):
+    # number of retrieved images (-1, because the first one is the query)
     R = len(result) - 1
-    Lq = db_clss[result[0]]  # category labels associated with query image
+
+    # category labels associated with query image
+    Lq = db_clss[result[0]]
+
     # category labels associated with retrieved images
     LXR = [db_clss[i] for i in result[1:]]
-    LX = 4  # set of category labels associated to archive ? FIXME.
 
-    AC, PR, RC, HL = 0, 0, 0, 0
+    # set of category labels associated to archive
+    LX = 4
+
+    ac, pr, rc, hl = 0, 0, 0, 0
     for LXr in LXR:
         intersect = len(
             [1 for index, label in enumerate(LXr) if label == 1 and Lq[index] == 1])
         union = len(
             [1 for index, label in enumerate(LXr) if label == 1 or Lq[index] == 1])
-        AC += intersect / union
-        PR += intersect / len([1 for l in LXr if l == 1])
-        RC += intersect / len([1 for l in Lq if l == 1])
-        HL += len([1 for index, label in enumerate(LXr) if (label ==
+        ac += intersect / union
+        pr += intersect / len([1 for l in LXr if l == 1])
+        rc += intersect / len([1 for l in Lq if l == 1])
+        hl += len([1 for index, label in enumerate(LXr) if (label ==
                                                             1 and Lq[index] == 0) or (label == 0 and Lq[index] == 1)])
-    return AC/R, PR/R, RC/R, HL/R
+    return ac/R, pr/R, rc/R, hl/R
 
 
-def cbir(query=None):
+def inference(query, db_feature=None, db_names=None, db_clss=None, model='hsi_model', verbose=False):
+    if not db_names:
+        db_img, _, db_names, db_clss = get_hsi()
+        model = models.load_model(model)
+        features = models.Model(
+            inputs=model.input, outputs=model.layers[-2].output)
+        db_feature = features.predict(db_img)
+
+    query_feature = db_feature[db_names.index(query)]
+    closest = k_closest(db_feature, query_feature)
+    ac, pr, rc, hl = score(db_clss, closest)
+    if verbose:
+        print('Retrieved images: ')
+        for i in closest:
+            print('\t>' + db_names[i][:-3] + 'bmp')
+        print('AC (%): {:.2f}\nPR (%): {:.2f}\nRC (%): {:.2f}\nHL    : {:.2f}'.format(
+            ac, pr, rc, hl))
+    return ac, pr, rc, hl
+
+
+def cbir(model='hsi_model'):
     db_img, _, db_names, db_clss = get_hsi()
-    model = models.load_model('hsi_model')
-    # model.summary()
+    model = models.load_model(model)
     features = models.Model(
         inputs=model.input, outputs=model.layers[-2].output)
     db_feature = features.predict(db_img)
 
-    if query:
-        queries = [query]
-    else:
-        queries = db_names
-
     AC, PR, RC, HL = 0, 0, 0, 0
-    for i, q in enumerate(queries):
-        print('{}/{}'.format(i, len(queries)))
-        query_feature = db_feature[db_names.index(q)]
-        closest = k_closest(db_feature, query_feature)
-        if query:
-            print('Retrieved images: ')
-            for i in closest:
-                print('\t>' + db_names[i][:-3] + 'bmp')
-        ac, pr, rc, hl = score(db_clss, closest)
+    for query in db_names:
+        ac, pr, rc, hl = inference(query, db_feature, db_names, db_clss, model)
         AC += ac
         PR += pr
         RC += rc
         HL += hl
-    N = len(queries)
-    AC, PR, RC, HL = AC/(N), PR/N, RC/N, HL/N
-    print('AC (%): {:.2f}'.format(AC))
-    print('PR (%): {:.2f}'.format(PR))
-    print('RC (%): {:.2f}'.format(RC))
-    print('HL    : {:.2f}'.format(HL))
+    N = len(db_names)
+    AC, PR, RC, HL = AC/N, PR/N, RC/N, HL/N
+    print('AC (%): {:.2f}\nPR (%): {:.2f}\nRC (%): {:.2f}\nHL    : {:.2f}'.format(
+        AC, PR, RC, HL))
 
 
-cbir()
+# cbir()
 
 
 # img = scipy.io.loadmat(
