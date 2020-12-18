@@ -8,8 +8,6 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 import scipy.spatial
 
-# TODO. valid & test split
-# TODO. calculate all the prediction values.
 
 
 def read_hsi(file):
