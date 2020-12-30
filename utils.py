@@ -8,6 +8,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 import scipy.spatial
 
+class_names = ['Rural Area', 'Urban Area', 'Cultivated Land', 'Forest']
 
 
 def read_hsi(file):
@@ -159,6 +160,42 @@ def cbir(model='hsi_model'):
     print('AC (%): {:.2f}\nPR (%): {:.2f}\nRC (%): {:.2f}\nHL    : {:.2f}'.format(
         AC, PR, RC, HL))
 
+def show_img(X_train, Y_train):
+    plt.figure(figsize=(10, 10))
+
+    for i in range(25):
+        plt.subplot(5, 5, i+1)
+        plt.xticks([])
+        plt.yticks([])
+        plt.grid(False)
+        plt.imshow(X_train[i][:, :, 10], cmap=plt.cm.binary)
+        plt.xlabel(class_names[Y_train[i]])
+    plt.show()
+
+def retrieve(query):
+    # TODO. test on closest
+    db_img, db_label, db_name = get_hsi()
+    model = models.load_model('hsi_model')
+    # model.summary()
+    features = models.Model(inputs=model.input, outputs=model.layers[-2].output)
+
+    db_feature = features.predict(db_img)
+    query_feature = db_feature[db_name.index(query)]
+    closest = k_closest(db_feature, query_feature)
+    print('Retrieved images: ')
+    for i in closest:
+        print(db_name[i][:-3] + 'bmp')
+        
+    plt.figure(figsize=(10, 10))
+
+    for i in range(6):
+        plt.subplot(5, 5, i+1)
+        plt.xticks([])
+        plt.yticks([])
+        plt.grid(False)
+        plt.imshow(db_img[closest[i]][:, :, 10], cmap=plt.cm.binary)
+        plt.xlabel(class_names[db_label[i]])
+    plt.show()
 
 # cbir()
 
