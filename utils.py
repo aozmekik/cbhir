@@ -16,6 +16,7 @@ class_names = ['Rural Area', 'Urban Area', 'Cultivated Land', 'Forest']
 def read_hsi(file):
     return scipy.io.loadmat(file)['patch']
 
+
 def get_hsi(dir='dataset/AnkaraHSIArchive'):
     X, Y, names, clss = [], [], [], []
 
@@ -90,9 +91,17 @@ def train_model(model, X_train, Y_train, X_test, Y_test):
     plt.legend(loc='lower right')
 
 
-def k_closest(db, query, k=6):
-    db = [i[0] for i in sorted(
-        enumerate(list(db)), key=lambda p: np.linalg.norm(p[1]-query))]
+def k_closest(db, query, k=6, norm='l2'):
+    if norm == 'l0':
+        def key(p): return np.linalg.norm(p[1]-query, ord=0)
+    if norm == 'l1':
+        def key(p): return np.linalg.norm(p[1]-query, ord=1)
+    elif norm == 'l2':
+        def key(p): return np.linalg.norm(p[1]-query)
+    elif norm == 'linf':
+        def key(p): return np.linalg.norm(p[1]-query, ord=np.inf)
+
+    db = [i[0] for i in sorted(enumerate(list(db)), key=key)]
     return db[:k]
 
 
@@ -123,7 +132,7 @@ def score(db_clss, result):
     return ac/R, pr/R, rc/R, hl/R
 
 
-def inference(query, db_feature=None, db_names=None, db_clss=None, model='hsi_model', verbose=False):
+def inference(query, db_feature=None, db_names=None, db_clss=None, model='hsi_model', norm='l2', verbose=False):
     if not db_names:
         db_img, _, db_names, db_clss = get_hsi()
         model = models.load_model(model)
@@ -132,7 +141,7 @@ def inference(query, db_feature=None, db_names=None, db_clss=None, model='hsi_mo
         db_feature = features.predict(db_img)
 
     query_feature = db_feature[db_names.index(query)]
-    closest = k_closest(db_feature, query_feature)
+    closest = k_closest(db_feature, query_feature, norm=norm)
     ac, pr, rc, hl = score(db_clss, closest)
     if verbose:
         print('Retrieved images: ')
@@ -143,7 +152,7 @@ def inference(query, db_feature=None, db_names=None, db_clss=None, model='hsi_mo
     return ac, pr, rc, hl
 
 
-def cbir(model='hsi_model'):
+def cbir(model='hsi_model', norm='l2'):
     db_img, _, db_names, db_clss = get_hsi()
     model = models.load_model(model)
     features = models.Model(
@@ -152,15 +161,18 @@ def cbir(model='hsi_model'):
 
     AC, PR, RC, HL = 0, 0, 0, 0
     for query in db_names:
-        ac, pr, rc, hl = inference(query, db_feature, db_names, db_clss, model)
+        ac, pr, rc, hl = inference(
+            query, db_feature, db_names, db_clss, model, norm=norm)
         AC += ac
         PR += pr
         RC += rc
         HL += hl
     N = len(db_names)
     AC, PR, RC, HL = AC/N, PR/N, RC/N, HL/N
+    print('Norm: ' + norm)
     print('AC (%): {:.2f}\nPR (%): {:.2f}\nRC (%): {:.2f}\nHL    : {:.2f}'.format(
         AC, PR, RC, HL))
+
 
 def show_img(X_train, Y_train):
     plt.figure(figsize=(10, 10))
@@ -174,20 +186,22 @@ def show_img(X_train, Y_train):
         plt.xlabel(class_names[Y_train[i]])
     plt.show()
 
-def retrieve(query):
+
+def retrieve(query, norm='l2'):
     # TODO. test on closest
     db_img, db_label, db_name = get_hsi()
     model = models.load_model('hsi_model')
     # model.summary()
-    features = models.Model(inputs=model.input, outputs=model.layers[-2].output)
+    features = models.Model(
+        inputs=model.input, outputs=model.layers[-2].output)
 
     db_feature = features.predict(db_img)
     query_feature = db_feature[db_name.index(query)]
-    closest = k_closest(db_feature, query_feature)
+    closest = k_closest(db_feature, query_feature, norm=norm)
     print('Retrieved images: ')
     for i in closest:
         print(db_name[i][:-3] + 'bmp')
-        
+
     plt.figure(figsize=(10, 10))
 
     for i in range(6):
@@ -199,7 +213,11 @@ def retrieve(query):
         plt.xlabel(class_names[db_label[i]])
     plt.show()
 
-# cbir()
+
+cbir(norm='l0')
+cbir(norm='l1')
+cbir(norm='l2')
+cbir(norm='linf')
 
 
 # img = scipy.io.loadmat(
