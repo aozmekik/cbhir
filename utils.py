@@ -214,10 +214,10 @@ def retrieve(query, norm='l2'):
     plt.show()
 
 
-cbir(norm='l0')
-cbir(norm='l1')
-cbir(norm='l2')
-cbir(norm='linf')
+# cbir(norm='l0')
+# cbir(norm='l1')
+# cbir(norm='l2')
+# cbir(norm='linf')
 
 
 # img = scipy.io.loadmat(
