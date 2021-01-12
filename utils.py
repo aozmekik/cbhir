@@ -152,7 +152,7 @@ def inference(query, db_feature=None, db_names=None, db_clss=None, model='hsi_mo
     return ac, pr, rc, hl
 
 
-def cbir(model='hsi_model', norm='l2'):
+def cbir(model='hsi_model', norm='l2', verbose=True):
     db_img, _, db_names, db_clss = get_hsi()
     model = models.load_model(model)
     features = models.Model(
@@ -169,9 +169,11 @@ def cbir(model='hsi_model', norm='l2'):
         HL += hl
     N = len(db_names)
     AC, PR, RC, HL = AC/N, PR/N, RC/N, HL/N
-    print('Norm: ' + norm)
-    print('AC (%): {:.2f}\nPR (%): {:.2f}\nRC (%): {:.2f}\nHL    : {:.2f}'.format(
-        AC, PR, RC, HL))
+    if verbose:
+        print('Norm: ' + norm)
+        print('AC (%): {:.2f}\nPR (%): {:.2f}\nRC (%): {:.2f}\nHL    : {:.2f}'.format(
+            AC, PR, RC, HL))
+    return AC, PR, RC, HL
 
 
 def show_img(X_train, Y_train):
