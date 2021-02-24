@@ -20,12 +20,12 @@ span.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weig
 div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
 -->
 </style>
-<script type="text/javascript" src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+<script type="text/javascript" src="src/wz_jsgraphics.js"></script>
 </head>
 <body>
 <div style="position:absolute;left:50%;margin-left:-297px;top:0px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background01.jpg" width=595 height=841></div>
+<img src="src/background01.jpg" width=595 height=841></div>
 <div style="position:absolute;left:261.10px;top:150.00px" class="cls_003"><span class="cls_003">T.C.</span></div>
 <div style="position:absolute;left:157.80px;top:178.00px" class="cls_004"><span class="cls_004">GEBZE TEKNİK ÜNİVERSİTESİ</span></div>
 <div style="position:absolute;left:169.30px;top:228.60px" class="cls_004"><span class="cls_004">Bilgisayar Mühendisliği Bölümü</span></div>
@@ -41,7 +41,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:851px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background02.jpg" width=595 height=841></div>
+<img src="src/background02.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:38.10px" class="cls_002"><span class="cls_002">Bu çalışma</span></div>
 <div style="position:absolute;left:188.64px;top:38.10px" class="cls_002"><span class="cls_002">/</span></div>
 <div style="position:absolute;left:203.94px;top:38.10px" class="cls_002"><span class="cls_002">/200.. tarihinde aşağıdaki jüri tarafından Bilgisayar Mühendisliği</span></div>
@@ -60,7 +60,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:1702px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background03.jpg" width=595 height=841></div>
+<img src="src/background03.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:238.20px" class="cls_007"><span class="cls_007">ÖNSÖZ</span></div>
 <div style="position:absolute;left:117.10px;top:278.40px" class="cls_002"><span class="cls_002">Bu  kılavuzun  ilk  taslaklarının  hazırlanmasında  emeği  geçenlere,  kılavuzun  son</span></div>
 <div style="position:absolute;left:117.10px;top:292.20px" class="cls_002"><span class="cls_002">halini almasında yol gösterici olan Sayın Prof. Dr. Erchan APTOULA hocama ve bu</span></div>
@@ -73,7 +73,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:2553px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background04.jpg" width=595 height=841></div>
+<img src="src/background04.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:98.00px" class="cls_007"><span class="cls_007">İÇİNDEKİLER</span></div>
 <div style="position:absolute;left:117.10px;top:138.10px" class="cls_007"><span class="cls_007">ÖNSÖZ</span></div>
 <div style="position:absolute;left:507.70px;top:138.10px" class="cls_007"><span class="cls_007">İİİ</span></div>
@@ -129,7 +129,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:3404px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background05.jpg" width=595 height=841></div>
+<img src="src/background05.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:98.00px" class="cls_007"><span class="cls_007">ŞEKİL LİSTESİ</span></div>
 <div style="position:absolute;left:117.10px;top:138.20px" class="cls_002"><span class="cls_002">ŞEKİL 1.1 Hiperspektral Görüntü Geri Erişimi</span></div>
 <div style="position:absolute;left:518.10px;top:138.20px" class="cls_002"><span class="cls_002">1</span></div>
@@ -159,7 +159,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:4255px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background06.jpg" width=595 height=841></div>
+<img src="src/background06.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:98.00px" class="cls_007"><span class="cls_007">TABLO LİSTESİ</span></div>
 <div style="position:absolute;left:117.10px;top:138.20px" class="cls_002"><span class="cls_002">TABLO 1.1  Veri Kümesi Çoklu Etiket Dağılımları</span></div>
 <div style="position:absolute;left:518.10px;top:138.20px" class="cls_002"><span class="cls_002">4</span></div>
@@ -183,7 +183,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:5106px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background07.jpg" width=595 height=841></div>
+<img src="src/background07.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:98.00px" class="cls_007"><span class="cls_007">KISALTMA LİSTESİ</span></div>
 <div style="position:absolute;left:117.10px;top:138.20px" class="cls_008"><span class="cls_008">PCA</span></div>
 <div style="position:absolute;left:189.10px;top:138.20px" class="cls_006"><span class="cls_006">:</span><span class="cls_002"> Temel Bileşen Analizi (Principal Component Analysis)</span></div>
@@ -207,7 +207,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:5957px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background08.jpg" width=595 height=841></div>
+<img src="src/background08.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:98.00px" class="cls_007"><span class="cls_007">ÖZET</span></div>
 <div style="position:absolute;left:117.10px;top:138.20px" class="cls_002"><span class="cls_002">Gelişen uzaktan algılama ve hipespektral görüntüleme sistemleri ile birlikte birçok</span></div>
 <div style="position:absolute;left:117.10px;top:158.90px" class="cls_002"><span class="cls_002">görüntü arşivleri toplanmış, büyüyen bu hiperspektral görüntü uzayını bünyesinde</span></div>
@@ -232,7 +232,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:6808px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background09.jpg" width=595 height=841></div>
+<img src="src/background09.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:98.00px" class="cls_007"><span class="cls_007">SUMMARY</span></div>
 <div style="position:absolute;left:117.10px;top:138.20px" class="cls_002"><span class="cls_002">Along with the developing remote sensing and hypespectral imaging systems, many</span></div>
 <div style="position:absolute;left:117.10px;top:158.90px" class="cls_002"><span class="cls_002">image archives  have been collected,  and many  systems that contain  this growing</span></div>
@@ -254,7 +254,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:7659px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background10.jpg" width=595 height=841></div>
+<img src="src/background10.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:83.80px" class="cls_007"><span class="cls_007">1. GİRİŞ</span></div>
 <div style="position:absolute;left:117.10px;top:124.00px" class="cls_006"><span class="cls_006">1.1. PROJENİN TANIMI</span></div>
 <div style="position:absolute;left:117.10px;top:152.00px" class="cls_002"><span class="cls_002">Hiperspektral  görüntüleme,  insan  gözünün  3  bantta  algılayabildiği  görünür</span></div>
@@ -284,7 +284,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:8510px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background11.jpg" width=595 height=841></div>
+<img src="src/background11.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:51.90px" class="cls_006"><span class="cls_006">1.2. HİPERSPEKTRAL GÖRÜNTÜLEME</span></div>
 <div style="position:absolute;left:117.10px;top:79.80px" class="cls_002"><span class="cls_002">İnsan  gözünün  mavi,  yeşil  ve  kırmızıda  sadece  üç  renk  alıcısı  varken,</span></div>
 <div style="position:absolute;left:117.10px;top:93.60px" class="cls_002"><span class="cls_002">hiperspektral  görüntüleme,  sadece  görünürde  değil,  aynı  zamanda  yakın</span></div>
@@ -311,7 +311,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:9361px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background12.jpg" width=595 height=841></div>
+<img src="src/background12.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:23.90px" class="cls_002"><span class="cls_002">araçları  gereklidir.  Bu  amaçla,  birçok  genel  amaçlı  görüntü  erişim  sistemi</span></div>
 <div style="position:absolute;left:117.10px;top:37.70px" class="cls_002"><span class="cls_002">geliştirilmiştir. İki başlık altında incelenebilir: Metin tabanlı ve içerik tabanlı.</span></div>
 <div style="position:absolute;left:117.10px;top:51.50px" class="cls_002"><span class="cls_002">Metin tabanlı yaklaşım 1970'lere uzanmakta ve bu tür sistemlerde görüntüler,</span></div>
@@ -342,7 +342,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:10212px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background13.jpg" width=595 height=841></div>
+<img src="src/background13.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:79.80px" class="cls_006"><span class="cls_006">1.5. VERİ KÜMESİ: AnkaraHSIArchive</span></div>
 <div style="position:absolute;left:117.10px;top:107.80px" class="cls_002"><span class="cls_002">Veri kümesi, araştırma amacıyla yayınlanan küçük bir hiperspektral görüntü</span></div>
 <div style="position:absolute;left:117.10px;top:121.60px" class="cls_002"><span class="cls_002">arşividir. Arşiv, EO-1 Hyperion sensörü tarafından elde edilen hiperspektral</span></div>
@@ -409,7 +409,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:11063px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background14.jpg" width=595 height=841></div>
+<img src="src/background14.jpg" width=595 height=841></div>
 <div style="position:absolute;left:119.90px;top:27.20px" class="cls_002"><span class="cls_002">Çim (Tip-C)</span></div>
 <div style="position:absolute;left:323.60px;top:27.20px" class="cls_002"><span class="cls_002">25</span></div>
 <div style="position:absolute;left:119.90px;top:47.00px" class="cls_002"><span class="cls_002">Göl</span></div>
@@ -445,7 +445,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:11914px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background15.jpg" width=595 height=841></div>
+<img src="src/background15.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:51.90px" class="cls_006"><span class="cls_006">1.6. PROJENİN TASARIMI</span></div>
 <div style="position:absolute;left:117.10px;top:79.80px" class="cls_002"><span class="cls_002">Tanıtılan verikümesi, hiperspektral görüntüler ve görüntü alımı sistemlerinin</span></div>
 <div style="position:absolute;left:117.10px;top:93.60px" class="cls_002"><span class="cls_002">sonunda projenin çalışma akışı şekildeki gibi temsil edilebilir.</span></div>
@@ -463,7 +463,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:12765px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background16.jpg" width=595 height=841></div>
+<img src="src/background16.jpg" width=595 height=841></div>
 <div style="position:absolute;left:153.10px;top:23.90px" class="cls_002"><span class="cls_002">ŞEKİL 2.1  Uç Üye Tabanlı Uzaklık Çalışma Akış Diyagramı [5]</span></div>
 <div style="position:absolute;left:117.10px;top:51.90px" class="cls_002"><span class="cls_002">Bu  çalışmadaki,  görüntü  öznitelikleri,  görüntü  verilerinden  son  üye</span></div>
 <div style="position:absolute;left:117.10px;top:65.70px" class="cls_002"><span class="cls_002">indüksiyon  algoritmaları</span></div>
@@ -483,7 +483,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:13616px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background17.jpg" width=595 height=841></div>
+<img src="src/background17.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:23.90px" class="cls_002"><span class="cls_002">Bu çalışmada,  Uç Üye çıkarımı için, önce PCA uygulanmış, sonra girdiden</span></div>
 <div style="position:absolute;left:117.10px;top:37.70px" class="cls_002"><span class="cls_002">rastgeler  değerler  ile  uç  üyeler  ilklendirilmiş  ve  hacim  hesaplaması</span></div>
 <div style="position:absolute;left:117.10px;top:51.50px" class="cls_002"><span class="cls_002">yapılmıştır.  Ardından  Değiştirme</span></div>
@@ -520,7 +520,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:14467px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background18.jpg" width=595 height=841></div>
+<img src="src/background18.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:23.80px" class="cls_007"><span class="cls_007">3. YAKLAŞIM</span></div>
 <div style="position:absolute;left:117.10px;top:64.00px" class="cls_002"><span class="cls_002">Çalışmada,  genel  tasarım  aynı  kalacak  şekilde,  yalnızca  derin  ağı  model</span></div>
 <div style="position:absolute;left:117.10px;top:77.80px" class="cls_002"><span class="cls_002">mimarisinin  değiştirilmesi  suretiyle  elde  edilecek  skorlar,  daha  sonra  bu</span></div>
@@ -557,7 +557,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:15318px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background19.jpg" width=595 height=841></div>
+<img src="src/background19.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:23.90px" class="cls_002"><span class="cls_002">Hamming  Loss</span></div>
 <div style="position:absolute;left:207.23px;top:23.90px" class="cls_002"><span class="cls_002">(HL),  sorgu  ve  sonuç  görüntünün  kategori  etiketleri</span></div>
 <div style="position:absolute;left:117.10px;top:37.70px" class="cls_002"><span class="cls_002">kümelerinin kesişmeyen eleman sayısının, ayrık sınıf sayısına (4) oranıdır.</span></div>
@@ -606,7 +606,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:16169px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background20.jpg" width=595 height=841></div>
+<img src="src/background20.jpg" width=595 height=841></div>
 <div style="position:absolute;left:238.87px;top:170.60px" class="cls_009"><span class="cls_009">ŞEKİL 3.2  2B-CNN Mimarisi</span></div>
 <div style="position:absolute;left:117.10px;top:203.00px" class="cls_002"><span class="cls_002">Sınıflandırmanın     başarım     oranı,     test     kümesinde</span></div>
 <div style="position:absolute;left:416.33px;top:203.00px" class="cls_002"><span class="cls_002">0.7090</span></div>
@@ -669,7 +669,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:17020px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background21.jpg" width=595 height=841></div>
+<img src="src/background21.jpg" width=595 height=841></div>
 <div style="position:absolute;left:119.90px;top:27.20px" class="cls_002"><span class="cls_002">Tam Bağlı Katman RELU 2</span></div>
 <div style="position:absolute;left:323.60px;top:27.20px" class="cls_002"><span class="cls_002">(64)</span></div>
 <div style="position:absolute;left:119.90px;top:47.00px" class="cls_002"><span class="cls_002">Tam Bağlı Katman RELU 3</span></div>
@@ -724,7 +724,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:17871px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background22.jpg" width=595 height=841></div>
+<img src="src/background22.jpg" width=595 height=841></div>
 <div style="position:absolute;left:261.10px;top:133.70px" class="cls_009"><span class="cls_009">ŞEKİL 3.4 HybridSN Mimarisi</span></div>
 <div style="position:absolute;left:117.10px;top:166.10px" class="cls_002"><span class="cls_002">Sınıflandırmanın  başarım  oranı,  test  kümesinde,  temel  bileşen  analizi</span></div>
 <div style="position:absolute;left:117.10px;top:179.90px" class="cls_002"><span class="cls_002">uygulanarak  119  katmandan  30  katmana  indirilerek  0.5727,  temel  bileşen</span></div>
@@ -804,7 +804,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:18722px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background23.jpg" width=595 height=841></div>
+<img src="src/background23.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:83.80px" class="cls_007"><span class="cls_007">4. VARGI</span></div>
 <div style="position:absolute;left:117.10px;top:124.00px" class="cls_002"><span class="cls_002">Projedeki  deneyler  neticesinde;</span></div>
 <div style="position:absolute;left:284.43px;top:124.00px" class="cls_002"><span class="cls_002">2 boyutlu CNN, sığ yöntemlerden daha</span></div>
@@ -835,7 +835,7 @@ div.cls_009{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weigh
 </div>
 <div style="position:absolute;left:50%;margin-left:-297px;top:19573px;width:595px;height:841px;border-style:outset;overflow:hidden">
 <div style="position:absolute;left:0px;top:0px">
-<img src="4d05876e-7677-11eb-8b25-0cc47a792c0a_id_4d05876e-7677-11eb-8b25-0cc47a792c0a_files/background24.jpg" width=595 height=841></div>
+<img src="src/background24.jpg" width=595 height=841></div>
 <div style="position:absolute;left:117.10px;top:83.80px" class="cls_007"><span class="cls_007">KAYNAKLAR</span></div>
 <div style="position:absolute;left:117.10px;top:124.00px" class="cls_002"><span class="cls_002">[1] </span><A HREF="https://en.wikipedia.org/wiki/hyperspectral_imaging/">https://en.wikipedia.org/wiki/Hyperspectral_imaging</A> </div>
 <div style="position:absolute;left:117.10px;top:137.80px" class="cls_002"><span class="cls_002">[2] Maria Tzelepi, Anastasios Tefas, Deep convolutional learning for Content Based</span></div>
