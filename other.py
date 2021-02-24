@@ -20,6 +20,7 @@ def get_img_data(f, maxsize=(494, 768), first=True):
     f = f[:-3] + 'bmp'
     img = Image.open(f)
     img.thumbnail(maxsize)
+    img = img.resize((63*2,63*2), Image.ANTIALIAS)
     return ImageTk.PhotoImage(img)
 
 
@@ -44,7 +45,7 @@ fnames = sorted(fnames, key=lambda x: re.search(r'\d+', x).group())
 file_list_column = [
     [
         sg.Listbox(
-            values=fnames, enable_events=True, size=(120, 40), key='-FILE LIST-'
+            values=fnames, enable_events=True, size=(150, 60), key='-FILE LIST-'
         )
     ],
 ]
@@ -103,3 +104,5 @@ while True:
 
 
 window.close()
+
+# 199, 66, 52, 25

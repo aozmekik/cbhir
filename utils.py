@@ -132,7 +132,7 @@ def score(db_clss, result):
     return ac/R, pr/R, rc/R, hl/R
 
 
-def inference(query, db_feature=None, db_names=None, db_clss=None, model='hsi_model', norm='l2', verbose=False):
+def inference(query, db_feature=None, db_names=None, db_clss=None, model=None, norm='l2', verbose=False):
     if not db_names:
         db_img, _, db_names, db_clss = get_hsi()
         model = models.load_model(model)
@@ -152,7 +152,7 @@ def inference(query, db_feature=None, db_names=None, db_clss=None, model='hsi_mo
     return ac, pr, rc, hl
 
 
-def cbir(model='hsi_model', norm='l2', verbose=True):
+def cbir(model='cnn3d_model', norm='l2', verbose=True):
     db_img, _, db_names, db_clss = get_hsi()
     model = models.load_model(model)
     features = models.Model(
@@ -162,7 +162,7 @@ def cbir(model='hsi_model', norm='l2', verbose=True):
     AC, PR, RC, HL = 0, 0, 0, 0
     for query in db_names:
         ac, pr, rc, hl = inference(
-            query, db_feature, db_names, db_clss, model, norm=norm)
+            query, db_feature, db_names, db_clss, model=model, norm=norm)
         AC += ac
         PR += pr
         RC += rc
@@ -190,9 +190,8 @@ def show_img(X_train, Y_train):
 
 
 def retrieve(query, norm='l2'):
-    # TODO. test on closest
     db_img, db_label, db_name = get_hsi()
-    model = models.load_model('hsi_model')
+    model = models.load_model('cnn3d_model')
     # model.summary()
     features = models.Model(
         inputs=model.input, outputs=model.layers[-2].output)
